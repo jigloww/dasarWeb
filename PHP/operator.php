@@ -43,4 +43,17 @@ echo "$a && $b = " . ($hasilAnd ? "Benar" : "Salah") . "<br>";
 echo "$a || $b = " . ($hasilOr ? "Benar" : "Salah") . "<br>";
 echo "!$a = " . ($hasilNotA ? "Benar" : "Salah") . "<br>";
 echo "!$b = " . ($hasilNotB ? "Benar" : "Salah") . "<br><br>";
+echo "<br>";
+
+$a += $b;
+echo "a += b → $a <br>";
+$a -= $b;
+echo "a -= b → $a <br>";
+$a *= $b;
+echo "a *= b → $a <br>";
+$a /= $b;
+echo "a /= b → $a <br>";
+$a %= $b;
+echo "a %= b → $a <br><br>";
+echo "<br>";
 ?>
