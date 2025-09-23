@@ -79,4 +79,10 @@ $hargaAkhir = $harga - $hargakrndiskon;
 echo "Harga awal: Rp$harga <br>";
 echo "Diskon: Rp$hargakrndiskon <br>";
 echo "Harga yang harus dibayar: Rp$hargaAkhir <br>";
+
+
+$poin = 520; 
+$hadiah = ($poin > 500) ? "YA" : "TIDAK";
+echo "Total skor pemain adalah: $poin <br>";
+echo "Apakah pemain mendapatkan hadiah tambahan? $hadiah <br>";
 ?>
