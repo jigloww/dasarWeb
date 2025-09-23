@@ -55,5 +55,12 @@ $a /= $b;
 echo "a /= b → $a <br>";
 $a %= $b;
 echo "a %= b → $a <br><br>";
-echo "<br>";
+
+$a = 10;
+$b = 5;
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+echo "Apakah $a identik dengan $b? : " . ($hasilIdentik ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a tidak identik dengan $b? : " . ($hasilTidakIdentik ? "Benar" : "Salah") . "<br><br>";
 ?>
