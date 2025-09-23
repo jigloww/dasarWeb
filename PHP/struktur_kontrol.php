@@ -53,17 +53,30 @@ foreach ($nilaiSiswa as $nilai) {
     echo "Nilai: $nilai (Lulus) <br>";
 }
 
-$nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
+$nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96]; 
 
 sort($nilaiSiswa); 
-array_terendah($nilaiSiswa);
-array_terendah($nilaiSiswa);
-array_tertinggi($nilaiSiswa);
-array_tertinggi($nilaiSiswa);
+array_shift($nilaiSiswa);
+array_shift($nilaiSiswa);
+array_pop($nilaiSiswa);
+array_pop($nilaiSiswa);
 
 $totalNilai = array_sum($nilaiSiswa);
 $rataRata = $totalNilai / count($nilaiSiswa);
 
 echo "Total nilai tanpa 2 nilai tertinggi & terendah: $totalNilai <br>";
 echo "Rata-rata nilai: $rataRata <br>";
+
+
+$harga = 120000;
+$diskon = 0.20;
+$hargakrndiskon = 0;
+if ($harga > 100000) {
+    $hargakrndiskon = $diskon * $harga;
+}
+
+$hargaAkhir = $harga - $hargakrndiskon;
+echo "Harga awal: Rp$harga <br>";
+echo "Diskon: Rp$hargakrndiskon <br>";
+echo "Harga yang harus dibayar: Rp$hargaAkhir <br>";
 ?>
