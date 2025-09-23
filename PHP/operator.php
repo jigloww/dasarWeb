@@ -17,4 +17,19 @@ echo "Hasil kali: {$hasilKali} <br>";
 echo "Hasil bagi: {$hasilBagi} <br>";
 echo "Sisa bagi: {$sisaBagi} <br>";
 echo "Pangkat: {$pangkat} <br>";
+echo "<br>";
+
+$hasilSama = $a == $b;
+$hasilTidakSama = $a != $b;
+$hasilLebihKecil = $a < $b;
+$hasilLebihBesar = $a > $b;
+$hasilLebihKecilSama = $a <= $b;
+$hasilLebihBesarSama = $a >= $b;
+
+echo "Apakah $a sama dengan $b? : " . ($hasilSama ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a tidak sama dengan $b? : " . ($hasilTidakSama ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a lebih kecil dari $b? : " . ($hasilLebihKecil ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a lebih besar dari $b? : " . ($hasilLebihBesar ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a lebih kecil sama dengan $b? : " . ($hasilLebihKecilSama ? "Benar" : "Salah") . "<br>";
+echo "Apakah $a lebih besar sama dengan $b? : " . ($hasilLebihBesarSama ? "Benar" : "Salah") . "<br><br>";
 ?>
