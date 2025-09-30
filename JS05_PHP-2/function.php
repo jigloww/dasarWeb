@@ -1,16 +1,8 @@
 <?php
-function perkenalan($nama, $salam="Assalamualaikum") {
-    echo $salam . ", ";
-    echo "Perkenalkan nama saya " . $nama . "<br/>";
-    echo "Senang berkenalan dengan anda<br/>";
+function hitungUmur($thn_Lahir, $thn_Sekarang) {
+    $umur = $thn_Sekarang - $thn_Lahir;
+    return $umur;
 }
 
-perkenalan("Hamdana", "Hallo");
-
-echo "<hr>";
-
-$saya = "Tanggaq";
-$ucapanSalam = "Selamat pagi";
-
-perkenalan($saya);
+echo "Umur saya adalah ". hitungUmur(2005, 2025) ." tahun";
 ?>
