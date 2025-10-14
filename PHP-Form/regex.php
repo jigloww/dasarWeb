@@ -20,3 +20,13 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!";
 }
 ?>
+<br>
+<br>
+<?php
+$pattern = '/apple/';
+$replacement = 'banana';
+$text = 'I like apple pie.';
+
+$new_text = preg_replace($pattern, $replacement, $text);
+echo $new_text; // Output: "I like banana pie."
+?>
