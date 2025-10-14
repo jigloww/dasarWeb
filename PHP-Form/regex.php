@@ -42,3 +42,15 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!";
 }
 ?>
+<br>
+<br>
+<?php
+$pattern = '/go?d/'; // Cocokkan "gd" atau "god"
+$text = 'god is good.';
+
+if (preg_match($pattern, $text, $matches)) {
+    echo "Cocokkan: " . $matches[0];
+} else {
+    echo "Tidak ada yang cocok!";
+}
+?>
