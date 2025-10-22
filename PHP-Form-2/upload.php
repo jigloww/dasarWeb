@@ -16,5 +16,8 @@ if (isset($_POST['submit'])) {
     } else {
         echo "File tidak valid atau melebihi ukuran yang diizinkan.";
     }
+
+    echo "<img src='$targetfile' width='200'>";
+
 }
 ?>
