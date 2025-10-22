@@ -5,16 +5,30 @@ if (!file_exists($targetDirectory)) {
     mkdir($targetDirectory, 0777, true);
 }
 
-if ($_FILES['files']['name'][0] != "") {
+if (isset($_FILES['files']) && $_FILES['files']['name'][0] != "") {
     $totalFiles = count($_FILES['files']['name']);
-    for ($i = 0; $i < $totalFiles; $i++) {
-        $fileName = $_FILES['files']['name'][$i];
-        $targetFile = $targetDirectory . $fileName;
+    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+    $maxSize = 5 * 1024 * 1024;
 
-        if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $targetFile)) {
-            echo "File $fileName berhasil diunggah.<br>";
+    for ($i = 0; $i < $totalFiles; $i++) {
+        $fileName = basename($_FILES['files']['name'][$i]);
+        $targetFile = $targetDirectory . $fileName;
+        $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $fileSize = $_FILES['files']['size'][$i];
+        $tmpName = $_FILES['files']['tmp_name'][$i];
+
+        if (in_array($fileType, $allowedExtensions)) {
+            if ($fileSize <= $maxSize) {
+                if (move_uploaded_file($tmpName, $targetFile)) {
+                    echo "File $fileName berhasil diunggah.<br>";
+                } else {
+                    echo "Gagal mengunggah file $fileName.<br>";
+                }
+            } else {
+                echo "Ukuran file $fileName melebihi batas maksimum.<br>";
+            }
         } else {
-            echo "Gagal mengunggah file $fileName.<br>";
+            echo "Tipe file $fileName tidak diizinkan.<br>";
         }
     }
 } else {
