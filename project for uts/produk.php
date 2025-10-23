@@ -71,7 +71,6 @@ if (!$result) {
         <th>Jenis Atasan</th>
         <th>Ukuran</th>
         <th>Warna</th>
-        <th>Aksi</th>
     </tr>
 
     <?php while ($row = pg_fetch_assoc($result)): ?>
@@ -80,10 +79,6 @@ if (!$result) {
             <td><?= htmlspecialchars($row["Jenis_Atasan"], ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($row["Ukuran"], ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($row["Warna"], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td>
-                <a href="#">Edit</a> | 
-                <a href="#">Hapus</a>
-            </td>
         </tr>
     <?php endwhile; ?>
 </table>
