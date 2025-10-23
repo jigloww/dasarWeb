@@ -6,10 +6,10 @@ if (button) {
   });
 }
 
-const brandLink = document.getElementById("brand-link");
-if (brandLink) {
-  brandLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    alert("Maaf, halaman web sedang dlm pengembangan");
-  });
-}
+// const brandLink = document.getElementById("brand-link");
+// if (brandLink) {
+//  brandLink.addEventListener("click", function(event) {
+//    event.preventDefault();
+//    alert("Maaf, halaman web sedang dlm pengembangan");
+//  });
+// }
