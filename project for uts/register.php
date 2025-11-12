@@ -1,6 +1,6 @@
 <?php
-// register.php
 session_start();
+require 'koneksi.php';
 
 // jika sudah login, redirect ke dashboard
 if (isset($_SESSION['user_id'])) {
@@ -23,6 +23,7 @@ $success = isset($_GET['success']) ? $_GET['success'] : '';
   <meta charset="utf-8">
   <title>Daftar Akun</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { font-family: Arial, sans-serif; background:#f4f6f8; padding:2rem; }
     .card { background:#fff; max-width:480px; margin:2rem auto; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
@@ -62,9 +63,14 @@ $success = isset($_GET['success']) ? $_GET['success'] : '';
 
       <small>Minimal 6 karakter untuk password.</small>
       <br><br>
-      <button type="submit">Daftar</button>
-      &nbsp; <a href="index_login.php">Kembali ke Login</a>
+      
+      <button type="button" class="btn btn-primary">Daftar</button>
+      &nbsp; 
+      <a class="link-opacity-75-hover" href="index_login.php">Kembali Login</a> 
     </form>
   </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

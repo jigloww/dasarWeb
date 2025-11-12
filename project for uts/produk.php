@@ -1,4 +1,7 @@
-<?php include 'koneksi.php'; 
+<?php 
+include 'koneksi.php'; 
+$conn = get_pg_connection();
+
 // Ambil data dari tabel Atasan_Pria
 $sql = 'SELECT "Id", "Jenis_Atasan", "Ukuran", "Warna" FROM "Atasan_Pria" ORDER BY "Id" ASC';
 $result = pg_query($conn, $sql);
@@ -7,6 +10,7 @@ if (!$result) {
     die('Query gagal: ' . pg_last_error($conn));
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">

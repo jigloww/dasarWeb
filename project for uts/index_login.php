@@ -1,6 +1,5 @@
 <?php
 session_start();
-// jika sudah login, redirect ke dashboard
 if (isset($_SESSION['id'])) {
     header('Location: dashboard.php');
     exit;
@@ -10,36 +9,43 @@ if (isset($_SESSION['id'])) {
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Login | Trive</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; background:#f6f6f6; }
-    .card { background:white; padding:1.5rem; border-radius:8px; max-width:400px; margin: 2rem auto; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    input[type="text"], input[type="password"] { width:100%; padding:0.5rem; margin:0.5rem 0; box-sizing:border-box; }
-    button { padding:0.6rem 1rem; }
-    .error { color: #b00020; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="card">
-    <h2>Masuk</h2>
-    <?php if (!empty($_GET['error'])): ?>
-      <div class="error"><?= htmlspecialchars($_GET['error']) ?></div>
-    <?php endif; ?>
-    <form action="autentikasi.php" method="post" autocomplete="off">
-      <label for="username">Username</label>
-      <input id="username" name="username" type="text" required autofocus>
+<body class="bg-light">
 
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" required>
+  <div class="container mt-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 400px;">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Masuk ke Dashboard</h3>
 
-      <button type="submit">Login</button>
-      <br>
-      <br>
+        <?php if (!empty($_GET['error'])): ?>
+          <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
+        <?php endif; ?>
 
-       <!-- <button type="submit">Daftar</button> -->
-        <a class="btn" href="register.php">Register</a>
-    </form>
+        <form action="autentikasi.php" method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input id="username" name="username" type="text" class="form-control" required autofocus>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" name="password" type="password" class="form-control" required>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="register.php" class="btn btn-outline-secondary">Buat Akun</a>
+            <a href="produk_home.php" class="btn btn-outline-success">Kembali</a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

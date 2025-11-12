@@ -1,12 +1,17 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+require 'koneksi.php';
+$conn = get_pg_connection();
+
+if (!isset($_SESSION['id'])) {
     header('Location: index_login.php');
     exit;
 }
-include 'koneksi.php';
-$id = $_GET['id'];
-pg_query($conn, "DELETE FROM \"Atasan_Pria\" WHERE \"Id\" = $id");
-header("Location: produk.php");
 
+$id = $_GET['id'] ?? null;
+if ($id) {
+    pg_query_params($conn, 'DELETE FROM "Atasan_Pria" WHERE "Id"=$1', [$id]);
+}
+header('Location: dashboard.php');
+exit;
 ?>
